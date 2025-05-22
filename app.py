@@ -1,5 +1,3 @@
-# app.py - SEOlyzer Flask Web Application
-
 from flask import Flask, render_template, request, jsonify, send_file, redirect, url_for
 import os
 import json
@@ -7,6 +5,7 @@ import threading
 import time
 from datetime import datetime
 import logging
+
 
 # Import your existing SEO analysis modules
 from seo_crawler import SEOCrawler

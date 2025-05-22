@@ -1,6 +1,7 @@
 .env
 __pycache__/
 *.pyc
-*.html
 *.json
 .DS_Store
+seo_report*.html
+seolyzer_report*.html
