@@ -1,5 +1,8 @@
   SEOlyzer - AI-Powered SEO Audit Tool
 
+  🌐 Live Demo
+🚀 **Try SEOlyzer**: https://seolyzer-production.up.railway.app
+
 An autonomous AI-powered agent that performs comprehensive SEO audits on websites and generates actionable recommendations in natural language.
 
    🚀 Features
