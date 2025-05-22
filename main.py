@@ -66,11 +66,12 @@ def run_seo_analysis(url):
     return html_report_path
 
 
+# To this:
 if __name__ == "__main__":
     # Check if OpenAI API key is configured
     if not os.getenv("OPENAI_API_KEY"):
-        print("OpenAI API key not found in environment variables.")
-        api_key = input("Enter your OpenAI API key: ")
+        print("Error: OPENAI_API_KEY environment variable not set")
+        exit(1) 
         os.environ["OPENAI_API_KEY"] = api_key
         
         # Also save to .env file for future runs
