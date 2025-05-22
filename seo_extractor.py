@@ -36,7 +36,11 @@ class SEOExtractor:
         """Extract meta title from the page."""
         # Try title tag first
         title_tag = soup.title
-        title = title_tag.string.strip() if title_tag else None
+        title = title_tag.string if title_tag and title_tag.string else None
+        
+        # Clean up the title
+        if title:
+            title = title.strip()
         
         # If no title tag, try meta title
         if not title:
@@ -45,12 +49,14 @@ class SEOExtractor:
                 title = meta_title['content'].strip()
                 
         return title or "No title found"
-    
+
     def _extract_meta_description(self, soup):
         """Extract meta description from the page."""
         meta_desc = soup.find('meta', attrs={'name': 'description'})
-        description = meta_desc['content'].strip() if meta_desc and meta_desc.get('content') else None
-        return description or "No meta description found"
+        if meta_desc and meta_desc.get('content') and meta_desc['content']:
+            description = meta_desc['content'].strip()
+            return description if description else "No meta description found"
+        return "No meta description found"
     
     def _extract_h1_tags(self, soup):
         """Extract H1 tags from the page."""
